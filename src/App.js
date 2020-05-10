@@ -5,10 +5,16 @@ export default class LetterCounter extends React.Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
-    this.state = { value: null};
+    this.state = { 
+      value: null,
+      length : 0
+    };
   }
   handleChange = e => {
-    this.setState({ value : e.target.value });
+    this.setState({ 
+      value : e.target.value,
+      length : e.target.value.length
+    });
   }
   render(){
     return(
@@ -20,9 +26,9 @@ export default class LetterCounter extends React.Component {
           onChange={this.handleChange}
           />
         </label>
-        <p>
-          Letter count:
-        </p>
+        <span>
+          Letter Count: {this.state.length}
+        </span>
       </div>
     )
   }
