@@ -21,11 +21,12 @@ export default class LetterCounter extends React.Component {
       <div className="mainDiv">
         <label>
           Write a word:
-          <input type='text'
+          <input className='inputOne' type='text'
           value={this.state.value}
           onChange={this.handleChange}
           />
         </label>
+        <br />
         <span>
           Letter Count: {this.state.length}
         </span>
